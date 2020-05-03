@@ -6,7 +6,9 @@ namespace LeetCode_May_Challenge
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var result = new Day3_Ransom_Note().CanConstruct("aa", "aab");
+            Console.WriteLine(result);
+            Console.Read();
         }
     }
 }
