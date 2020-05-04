@@ -6,7 +6,7 @@ namespace LeetCode_May_Challenge
     {
         static void Main(string[] args)
         {
-            var result = new Day3_Ransom_Note().CanConstruct("aa", "aab");
+            var result = new Day4_Number_Complement().FindComplement(5);
             Console.WriteLine(result);
             Console.Read();
         }
