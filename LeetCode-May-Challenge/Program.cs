@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace LeetCode_May_Challenge
 {
@@ -6,12 +8,18 @@ namespace LeetCode_May_Challenge
     {
         static void Main(string[] args)
         {
-            var result = new Day15_Max_Sum_Circular_Subarray().MaxSubarraySumCircular(new int[] {
-                -9, 14, 24, -14, 12, 18, -18, -10, -10, -23, -2, -23, 11, 12, 18, -9, 9,
-                    -29,
-                12, 4, -8, 15, 11, -12, -16, -9, 19, -12, 22, 16            
-            });
+            var result = new Day17_Find_All_Anagrams_in_string().FindAnagrams(
+                "cbaebabacd", "abc"
+            );
+
             Console.WriteLine("Result " + result);
+            var iList = result as IEnumerable<int>;
+            if (iList != null) {
+                foreach (var i in iList) {
+                    Console.Write($"{i} ");
+                }
+                Console.WriteLine();
+            }
             Console.Read();
         }
     }
