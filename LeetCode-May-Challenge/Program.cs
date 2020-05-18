@@ -8,18 +8,9 @@ namespace LeetCode_May_Challenge
     {
         static void Main(string[] args)
         {
-            var result = new Day17_Find_All_Anagrams_in_string().FindAnagrams(
-                "cbaebabacd", "abc"
-            );
+            var result = new Day18_Permutation_In_String().CheckInclusion("ab", "eidbaooo");
 
             Console.WriteLine("Result " + result);
-            var iList = result as IEnumerable<int>;
-            if (iList != null) {
-                foreach (var i in iList) {
-                    Console.Write($"{i} ");
-                }
-                Console.WriteLine();
-            }
             Console.Read();
         }
     }
