@@ -9,40 +9,39 @@ namespace LeetCode_May_Challenge
     {
         public bool CheckInclusion(string s1, string s2)
         {
+            if (s1.Length > s2.Length) return false;
             int N = 26;
-            int[] letters = new int[N];
-            
-            foreach (var ch in s1) letters[ch - 'a']++;
+            int[] letters1 = new int[N];
+            int[] letters2 = new int[N];
 
-            for (int i = 0; i <= s2.Length - s1.Length; i++)
-            {
-                int[] temp = new int[N];
-                for (int l = 0; l < N; l++) temp[l] = letters[l];
-                bool f = true;
-                for(int j=0; j < s1.Length; j++)
-                {
-                    var key = s2[i + j] - 'a';
-                    temp[key]--;
-
-                    if (temp[key] < 0) {
-                        f = false;
-                        break;
-                    }
-                }
-
-                if (f) {
-                    for (int j = 0; j < N; j++) {
-                        if (temp[j] != 0) {
-                            f = false;
-                            break;
-                        }
-                    }
-
-                    if (f) return true;
-                }
+            for (int i = 0; i < s1.Length; i++) {
+                letters1[s1[i] - 'a']++;
+                letters2[s2[i] - 'a']++;
             }
 
-            return false;
+            int count = 0;
+            for (int i = 0; i < N; i++)
+            {
+                if (letters2[i] == letters1[i]) count++;
+            }
+
+
+            for (int i = 0; i < s2.Length - s1.Length; i++)
+            {
+                if (count == N) return true;
+                int r = s2[i + s1.Length] - 'a';
+                int l = s2[i] - 'a';
+
+                letters2[r]++;
+                if (letters2[r] == letters1[r]) count++;
+                else if (letters2[r] - 1 == letters1[r]) count--;
+
+                letters2[l]--;
+                if (letters1[l] == letters2[l]) count++;
+                else if (letters2[l] + 1 == letters1[l]) count--;
+            }
+
+            return count == N;
         }
     }
 }
