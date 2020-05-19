@@ -8,8 +8,7 @@ namespace LeetCode_May_Challenge
     {
         static void Main(string[] args)
         {
-            var result = new Day18_Permutation_In_String().CheckInclusion("ab", "eidbaooo");
-
+            var result = "";
             Console.WriteLine("Result " + result);
             Console.Read();
         }
