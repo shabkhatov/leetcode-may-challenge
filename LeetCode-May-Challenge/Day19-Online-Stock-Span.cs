@@ -11,31 +11,27 @@ namespace LeetCode_May_Challenge
     {
         public class StockSpanner
         {
-            private List<int> prices;
-            private List<int> dp;
-
+            private Stack<int> prices;
+            private Stack<int> counts;
             public StockSpanner()
             {
-                prices = new List<int>();
-
-                dp = new List<int>();
+                prices = new Stack<int>();
+                counts = new Stack<int>();
             }
 
             public int Next(int price)
             {
                 int count = 1;
 
-                for (int i = prices.Count - 1; i >= 0;) {
-                    if (price < prices[i]) break;
-                    
-                    count += dp[i];
-                    i -= dp[i];
+                while (prices.Count > 0 && prices.Peek() <= price) {
+                    prices.Pop();
+                    count += counts.Pop();
                 }
 
-                prices.Add(price);
-                dp.Add(count);
+                prices.Push(price);
+                counts.Push(count);
 
-                return dp.Last();
+                return counts.Peek();
             }
         }
     }
