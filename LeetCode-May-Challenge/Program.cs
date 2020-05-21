@@ -8,18 +8,12 @@ namespace LeetCode_May_Challenge
     {
         static void Main(string[] args)
         {
-            var result = new Day20_Kth_Smallest_in_BST().KthSmallest(
-                new Day20_Kth_Smallest_in_BST.TreeNode(5, 
-                    new Day20_Kth_Smallest_in_BST.TreeNode(3,
-                        new Day20_Kth_Smallest_in_BST.TreeNode(2,
-                            new Day20_Kth_Smallest_in_BST.TreeNode(1),
-                            null
-                        ),
-                        new Day20_Kth_Smallest_in_BST.TreeNode(4)
-                    ),
-                    new Day20_Kth_Smallest_in_BST.TreeNode(6)
-                ),
-                3
+            var result = new Day21_Count_Square_Submatrices_with_All_Ones().CountSquares(
+                new int[][] {
+                  new int[] { 1, 0, 1 },
+                  new int[] { 1, 1, 0 },
+                  new int[] { 1, 1, 0 }
+                }
             );
             Console.WriteLine("Result " + result);
             Console.Read();
