@@ -9,32 +9,24 @@ namespace LeetCode_May_Challenge
     {
         public int CountSquares(int[][] matrix)
         {
-            int result = 0;
-            for (int i = 0; i < matrix.Length; i++) {
-                for (int j = 0; j < matrix[i].Length; j++) {
-                    Console.Write($"{matrix[i][j]} ");
-                    if (matrix[i][j] == 1) {
-                        int l = i, k = j;
-                        bool f = false;
-                        while (CheckIndex(matrix, i, j, l, k) && !f) {
-                            for (int tt = i; tt <= l; tt++) {
-                                for (int t = j; t <= k && !f; t++) {
-                                    if (matrix[tt][t] == 0) {
-                                        f = true;
-                                        break;
-                                    }
-                                }
-                            }
-                            if (!f) result++;
-                            l++;
-                            k++;
-                        }
+            int n = matrix.Length;
+            int m = matrix[0].Length;
+            int count = 0;
+            int[,] dp = new int[n + 1, m + 1];
+
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = 1; j <= m; j++)
+                {
+                    if (matrix[i - 1][j - 1] == 1)
+                    {
+                        dp[i, j] = 1 + Math.Min(dp[i - 1, j - 1], Math.Min(dp[i - 1, j], dp[i, j - 1]));
+                        count += dp[i, j];
                     }
                 }
-                Console.WriteLine();
             }
 
-            return result;
+            return count;
         }
 
         private bool CheckIndex(int[][] array, int i, int j, int l, int k)
