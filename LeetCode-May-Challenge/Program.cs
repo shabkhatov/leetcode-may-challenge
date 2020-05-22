@@ -8,13 +8,7 @@ namespace LeetCode_May_Challenge
     {
         static void Main(string[] args)
         {
-            var result = new Day21_Count_Square_Submatrices_with_All_Ones().CountSquares(
-                new int[][] {
-                  new int[] { 1, 0, 1 },
-                  new int[] { 1, 1, 0 },
-                  new int[] { 1, 1, 0 }
-                }
-            );
+            var result = new Day22_Sort_Characters_By_Frequency().FrequencySort("vasdfaerqw");
             Console.WriteLine("Result " + result);
             Console.Read();
         }
