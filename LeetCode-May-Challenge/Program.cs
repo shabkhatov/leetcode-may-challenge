@@ -8,8 +8,9 @@ namespace LeetCode_May_Challenge
     {
         static void Main(string[] args)
         {
-            var result = new Day24_Construct_BST_from_Preorder_Traversal().BstFromPreorder(
-                new int[] { 8, 5, 1, 7, 10, 12}
+            var result = new Day25_Uncrossed_lines().MaxUncrossedLines(
+                new int[] { 1, 4, 2 },
+                new int[] { 1, 2, 4 }
             );
             Console.WriteLine("Result " + result);
             Console.Read();
