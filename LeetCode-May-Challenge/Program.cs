@@ -8,17 +8,12 @@ namespace LeetCode_May_Challenge
     {
         static void Main(string[] args)
         {
-            var result = new Day27_Possible_Bipartition().PossibleBipartition(5,
-                new int[][] {
-                    new int[]{ 1,2},
-                    new int[]{ 2,3},
-                    new int[]{ 3,4},
-                    new int[]{ 4,5},
-                    new int[]{ 1,5}
-                }
+            var result = new Day28_Counting_Bits().CountBits(33);
 
-            );
             Console.WriteLine("Result " + result);
+            foreach (var v in result) {
+                Console.WriteLine(v);
+            }
             Console.Read();
         }
     }
