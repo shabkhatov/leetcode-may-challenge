@@ -8,12 +8,10 @@ namespace LeetCode_May_Challenge
     {
         static void Main(string[] args)
         {
-            var result = new Day28_Counting_Bits().CountBits(33);
-
+            var result = new Day29_Course_Schedule().CanFinish(2, new int[][] {
+                new int[]{ 1, 0}
+            });
             Console.WriteLine("Result " + result);
-            foreach (var v in result) {
-                Console.WriteLine(v);
-            }
             Console.Read();
         }
     }
