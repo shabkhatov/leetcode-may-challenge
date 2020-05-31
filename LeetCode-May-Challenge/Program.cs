@@ -8,14 +8,7 @@ namespace LeetCode_May_Challenge
     {
         static void Main(string[] args)
         {
-            var result = new Day30_K_Closest_Points_To_Origin().KClosest(
-                new int[][] {
-                    new int[]{ 3,3},
-                    new int[]{ 5,-1},
-                    new int[]{ -2, 4}
-                },
-                2
-            );
+            var result = new Day31_Edit_Distance().MinDistance("intention", "execution");
             Console.WriteLine("Result " + result);
             Console.Read();
         }
